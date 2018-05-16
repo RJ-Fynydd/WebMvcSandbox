@@ -1,0 +1,95 @@
+﻿@using WebMvcSandbox.Models
+
+@model IEnumerable<Entry>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+    <h1>My Test Sandbox</h1>
+    <p class="lead">Welcome to my test sandbox! Here is where I test new things I learn in ASP.NET.</p>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Database Data:</h2>
+        <table class="table table-bordered table-responsive">
+            <tr>
+                <th>Entry Id</th>
+                <th>Entry Name</th>
+                <th>Entry Note</th>
+            </tr>
+            @foreach (Entry entry in Model)
+            {
+                <tr>
+                    <td>@entry.entryId</td>
+                    <td>@Html.ActionLink(entry.entryName, "UpdateEntries", new { entry.entryId, entry.entryName, entry.entryNote })</td>
+                    <td>@entry.entryNote</td>
+                </tr>
+            }
+        </table>
+        <p>
+            @Html.ActionLink("Add Entry", "AddEntries", "Home", new { area = "" }, new { @class = "btn btn-custom" })
+        </p>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Hello World!</h2>
+        <p>
+            Lorem ipsum dolor sit amet, per omnis aeterno honestatis at. Sed munere vocibus philosophia ei,
+            viderer suavitate urbanitas vix eu. Ad vim nullam lobortis, clita nonumy probatus quo et. Vis id singulis accusamus.
+        </p>
+        <p><a class="btn btn-custom" href="#">Filler Button &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>This is a cool box!</h2>
+        <p>
+            Lorem ipsum dolor sit amet, ad vix facete legimus. Mea ei veri corpora, ad unum integre has, te meis
+            apeirian definiebas nec. Congue mnesarchum at mei, ludus laoreet tincidunt no sea.
+            Ad sed nostro consulatu voluptatum. Ei tota velit consulatu.
+        </p>
+        <p><a class="btn btn-custom" href="#">Filler Button &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Sponsored By...</h2>
+        <img class="img-responsive" src="https://bitconnectcoin.co/assets/images/pool/bitconnect-big.png?32458" alt="Bitconnect image" />
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>This is yet another box</h2>
+        <p>
+            Lorem ipsum dolor sit amet, per omnis aeterno honestatis at. Sed munere vocibus philosophia ei,
+            viderer suavitate urbanitas vix eu. Ad vim nullam lobortis, clita nonumy probatus quo et. Vis id singulis accusamus.
+        </p>
+        <p><a class="btn btn-custom" href="#">Filler Button &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Holy crap, did someone say "Lambda Function?"</h2>
+        <p>
+            Lorem ipsum dolor sit amet, per omnis aeterno honestatis at. Sed munere vocibus philosophia ei,
+            viderer suavitate urbanitas vix eu. Ad vim nullam lobortis, clita nonumy probatus quo et. Vis id singulis accusamus.
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Yote</h2>
+        <p>
+            Lorem ipsum dolor sit amet, per omnis aeterno honestatis at. Sed munere vocibus philosophia ei,
+            viderer suavitate urbanitas vix eu. Ad vim nullam lobortis, clita nonumy probatus quo et. Vis id singulis accusamus.
+        </p>
+    </div>
+</div>

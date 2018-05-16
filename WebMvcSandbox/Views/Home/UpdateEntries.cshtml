@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Update Entries";
+}
+
+<style>
+    .center_div {
+        margin: 0 auto;
+        width: 300px;
+    }
+</style>
+
+
+<div class="container center_div">
+    <h3 style="text-align: center; font-weight: bold;">UpdateEntries</h3>
+
+    @using (Html.BeginForm("UpdateEntriesPost", "Home", FormMethod.Post, new { @class = "form" }))
+    {
+        <div class="form-group">
+            <label class="control-label" for="entryName">Entry Name</label>
+            <input class="input-lg" id="entryName" type="text" name="entryName" value="@ViewBag.entryName" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="entryNotes">Entry Notes</label>
+            <input class="input-lg" id="entryNotes" type="text" name="entryNotes" value="@ViewBag.entryNotes" />
+        </div>
+
+        <input type="hidden" id="entryId" name="entryId" value="@ViewBag.entryId" />
+
+        <button class="btn" type="submit" name="action" value="update">Update</button>
+        <button class="btn" type="submit" name="action" value="delete">Delete</button>
+
+
+    }
+
+</div>
