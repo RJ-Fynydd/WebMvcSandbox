@@ -1,4 +1,3 @@
 ﻿$(document).ready(function () {
-    console.log("Hello, Web!");
-
+    $('#myTable').DataTable();
 });
