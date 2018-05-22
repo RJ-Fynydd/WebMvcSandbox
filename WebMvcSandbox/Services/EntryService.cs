@@ -111,6 +111,28 @@ namespace WebMvcSandbox.Services
             return true;
         }
 
+        public static Boolean AddTempEntry(string temp)
+        {
+            string constr = ConfigurationManager.ConnectionStrings["MySQL_Con"].ConnectionString;
+            using (MySqlConnection con = new MySqlConnection(constr))
+            {
+                string query = "INSERT INTO temperature(DateTime, TempF) " +
+                    "VALUES ('" + DateTime.Now.ToString("yyyy'-'MM'-'dd HH':'mm':'ss") + "'," + Convert.ToDouble(temp) + ")";
+
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+                }
+            }
+
+            return true;
+        }
+
 
     }
 }

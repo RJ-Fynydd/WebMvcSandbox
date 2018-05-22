@@ -1,40 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebMvcSandbox.Services;
 
 namespace WebMvcSandbox.Controllers
 {
-    [Route("api/Test")]
     public class TestController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            return DateTime.Now.ToString();
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        // POST api/<controller>/i
+        [HttpPost]
+        public HttpResponseMessage Post([FromBody]string value)
         {
-            return "value";
-        }
+            System.Diagnostics.Debug.WriteLine(value);
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
+            EntryService.AddTempEntry(value);
+            //EntryService.AddEntry(new Models.Entry(Convert.ToString(value), "From the arduino."));
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
+            return new HttpResponseMessage(HttpStatusCode.Created);
         }
     }
 }
