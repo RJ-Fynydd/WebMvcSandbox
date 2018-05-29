@@ -559,3 +559,5 @@ typings/
 
 
 # End of https://www.gitignore.io/api/csharp,aspnetcore,visualstudio
+
+WebMvcSandbox/Web.config
