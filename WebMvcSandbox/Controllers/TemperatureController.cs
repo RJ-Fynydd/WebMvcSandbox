@@ -8,22 +8,19 @@ using WebMvcSandbox.Services;
 
 namespace WebMvcSandbox.Controllers
 {
-    public class TestController : ApiController
+    public class TemperatureController : ApiController
     {
-        // GET api/<controller>
+        // GET
         public IEnumerable<TemperatureEntry> Get()
         {
-            return EntryService.GetTempEntries();
+            return TemperatureService.GetTempEntries();
         }
 
-        // POST api/<controller>/i
+        // POST
         [HttpPost]
         public HttpResponseMessage Post([FromBody]Double value)
         {
-            System.Diagnostics.Debug.WriteLine("Reported Temperature: " + value);
-
-            EntryService.AddTempEntry(value);
-
+            TemperatureService.AddTempEntry(value);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }

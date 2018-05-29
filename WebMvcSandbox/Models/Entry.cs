@@ -17,11 +17,13 @@ namespace WebMvcSandbox.Models
             this.EntryNote = EntryNotes;
         }
 
+
         public Entry(string EntryName, string EntryNotes = "")
         {
             this.EntryName = EntryName;
             this.EntryNote = EntryNotes;
         }
+
 
         public Entry() { }
 

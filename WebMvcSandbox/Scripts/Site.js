@@ -16,8 +16,6 @@
         }
         loadChart(xAxis, yAxis);
     });
-
-
 });
 
 
@@ -27,6 +25,7 @@ function toFormattedDate(date) {
     return date_.getMonth() + "-" + date_.getDate() + "-" + date_.getFullYear()
         + " " + date_.getHours() + ":" + date_.getMinutes() + ":" + date_.getSeconds();
 }
+
 
 var myChart;
 function loadChart(xAxis, yAxis) {
