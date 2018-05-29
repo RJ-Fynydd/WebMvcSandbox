@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebMvcSandbox.Models;
 using WebMvcSandbox.Services;
 
 namespace WebMvcSandbox.Controllers
@@ -10,21 +11,20 @@ namespace WebMvcSandbox.Controllers
     public class TestController : ApiController
     {
         // GET api/<controller>
-        public string Get()
+        public IEnumerable<TemperatureEntry> Get()
         {
-            return DateTime.Now.ToString();
+            return EntryService.GetTempEntries();
         }
 
         // POST api/<controller>/i
         [HttpPost]
-        public HttpResponseMessage Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]Double value)
         {
-            System.Diagnostics.Debug.WriteLine(value);
+            System.Diagnostics.Debug.WriteLine("Reported Temperature: " + value);
 
             EntryService.AddTempEntry(value);
-            //EntryService.AddEntry(new Models.Entry(Convert.ToString(value), "From the arduino."));
 
-            return new HttpResponseMessage(HttpStatusCode.Created);
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

@@ -28,6 +28,10 @@
   color: #9d9d9d !important;
   transition-duration: 0.3s; }
 
+#myChart {
+  width: 600px;
+  margin: auto; }
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
   padding-left: 15px;
@@ -44,3 +48,4 @@ input,
 select,
 textarea {
   max-width: 280px; }
+
