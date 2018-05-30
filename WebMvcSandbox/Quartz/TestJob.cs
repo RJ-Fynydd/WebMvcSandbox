@@ -3,6 +3,7 @@
 using Quartz;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace WebMvcSandbox.Quartz
 {
@@ -18,5 +19,9 @@ namespace WebMvcSandbox.Quartz
             System.Diagnostics.Debug.WriteLine("Test Job Fire");
         }
 
+        Task IJob.Execute(IJobExecutionContext context)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

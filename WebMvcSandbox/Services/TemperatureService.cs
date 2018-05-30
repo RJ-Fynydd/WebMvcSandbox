@@ -42,7 +42,7 @@ namespace WebMvcSandbox.Services
             string constr = ConfigurationManager.ConnectionStrings["MySQL_Con"].ConnectionString;
             using (MySqlConnection con = new MySqlConnection(constr))
             {
-                string query = "SELECT * FROM temperature ORDER BY DateTime DESC LIMIT 10";
+                string query = "SELECT * FROM temperature ORDER BY DateTime DESC LIMIT 100";
 
                 using (MySqlCommand cmd = new MySqlCommand(query))
                 {

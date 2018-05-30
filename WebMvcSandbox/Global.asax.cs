@@ -17,7 +17,7 @@ namespace WebMvcSandbox
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            JobScheduler.Start();
+            //JobScheduler.Start();
 
         }
     }

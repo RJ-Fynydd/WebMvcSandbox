@@ -46,9 +46,13 @@ body {
 }
 
 
-#myChart {
-    width: 600px;
-    margin: auto;
+.chartContainer {
+    height: 40vh !important;
+    width: 100% !important;
+    position: relative;
+    margin: 0 auto 10px auto;
+    padding: 5px;
+    border: 1px solid #e0e0e0;
 }
 
 
