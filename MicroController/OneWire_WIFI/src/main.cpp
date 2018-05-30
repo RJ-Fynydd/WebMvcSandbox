@@ -48,7 +48,7 @@ void loop()
     Serial.println(tempF + String(" °F"));
     postData(tempF);
 
-    delay(10000);
+    delay(600000);
 }
 
 void postData(double tempF)
